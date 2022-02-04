@@ -1,6 +1,6 @@
-package anz.com.org.accounts.model;
+package com.anz.accounts.model;
 
-import anz.com.org.accounts.enums.DebitCreditEnum;
+import com.anz.accounts.enums.DebitCreditEnum;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Builder;
 import lombok.Getter;

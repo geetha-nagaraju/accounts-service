@@ -1,4 +1,4 @@
-package anz.com.org.accounts.model;
+package com.anz.accounts.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

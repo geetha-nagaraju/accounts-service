@@ -1,9 +1,9 @@
-package anz.com.org.accounts.resource;
+package com.anz.accounts.resource;
 
-import anz.com.org.accounts.exception.ServiceException;
-import anz.com.org.accounts.model.Account;
-import anz.com.org.accounts.model.Transaction;
-import anz.com.org.accounts.service.AccountService;
+import com.anz.accounts.exception.ServiceException;
+import com.anz.accounts.model.Account;
+import com.anz.accounts.model.Transaction;
+import com.anz.accounts.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

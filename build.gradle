@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 }
 
-group = 'anz.com.org'
+group = 'com.anz.accounts'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 

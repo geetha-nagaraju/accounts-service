@@ -1,6 +1,6 @@
-package anz.com.org.accounts.model;
+package com.anz.accounts.model;
 
-import anz.com.org.accounts.enums.AccountType;
+import com.anz.accounts.enums.AccountType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 

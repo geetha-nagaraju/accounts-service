@@ -1,11 +1,10 @@
-package anz.com.org.accounts.dao;
+package com.anz.accounts.dao;
 
-import anz.com.org.accounts.enums.AccountType;
-import anz.com.org.accounts.enums.DebitCreditEnum;
-import anz.com.org.accounts.model.Account;
-import anz.com.org.accounts.model.Transaction;
+import com.anz.accounts.enums.AccountType;
+import com.anz.accounts.enums.DebitCreditEnum;
+import com.anz.accounts.model.Account;
+import com.anz.accounts.model.Transaction;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;

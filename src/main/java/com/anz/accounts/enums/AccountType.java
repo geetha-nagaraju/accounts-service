@@ -1,4 +1,4 @@
-package anz.com.org.accounts.enums;
+package com.anz.accounts.enums;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;

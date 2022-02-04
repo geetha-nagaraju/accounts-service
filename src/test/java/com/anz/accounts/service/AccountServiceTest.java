@@ -1,10 +1,10 @@
-package anz.com.org.accounts.service;
+package com.anz.accounts.service;
 
-import anz.com.org.accounts.dao.AccountDao;
-import anz.com.org.accounts.enums.AccountType;
-import anz.com.org.accounts.enums.DebitCreditEnum;
-import anz.com.org.accounts.model.Account;
-import anz.com.org.accounts.model.Transaction;
+import com.anz.accounts.dao.AccountDao;
+import com.anz.accounts.enums.AccountType;
+import com.anz.accounts.enums.DebitCreditEnum;
+import com.anz.accounts.model.Account;
+import com.anz.accounts.model.Transaction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

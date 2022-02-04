@@ -1,4 +1,4 @@
-package anz.com.org.accounts.exception;
+package com.anz.accounts.exception;
 
 public class ServiceException extends Exception {
 
