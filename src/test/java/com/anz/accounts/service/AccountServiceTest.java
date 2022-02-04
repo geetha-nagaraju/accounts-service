@@ -33,7 +33,7 @@ public class AccountServiceTest {
     @BeforeEach
     public void setUp() { }
 
-    private List<Account> getAccounts() {
+    List<Account> getAccounts() {
         List<Account> accounts = new ArrayList<>();
 
         Account account1 = Account.builder().accountNumber("595309209")
@@ -44,16 +44,12 @@ public class AccountServiceTest {
                 .accountName("AUSavings726").accountType(AccountType.SAVINGS).balanceDate("")
                 .currency("AUD").balanceAmount("2000").build();
 
-        Account account3 = Account.builder().accountNumber("321143048")
-                .accountName("AUCurrent433").accountType(AccountType.CURRENT).balanceDate("")
-                .currency("AUD").balanceAmount("2000").build();
-
         accounts.add(account1);
         accounts.add(account2);
         return accounts;
     }
 
-    private List<Transaction> getAccountTransactions(String accountId) {
+    List<Transaction> getAccountTransactions(String accountId) {
 
         transactions = new ArrayList<>();
         Transaction transaction1 = Transaction.builder().accountNumber("595309209")
@@ -80,7 +76,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void test_getAccounts() {
+    void test_getAccounts() {
         Mockito.when(accountDao.getAccountList()).thenReturn(getAccounts());
         List<Account> accounts = accountService.getAllAccountDetails();
         Assertions.assertEquals(accounts.size(),2);
@@ -88,7 +84,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void test_getAccountsTransactions() {
+    void test_getAccountsTransactions() {
         String accountId = "595309209";
         Mockito.when(accountDao.getAccountTransactionDetails(accountId)).thenReturn(getAccountTransactions(accountId));
         List<Transaction> transactions = accountService.getTransactionDetails(accountId);
@@ -98,7 +94,7 @@ public class AccountServiceTest {
     }
 
     @Test
-    public void test_getAccountsTransactions_single() {
+    void test_getAccountsTransactions_single() {
         String accountId = "781066619";
         Mockito.when(accountDao.getAccountTransactionDetails(accountId)).thenReturn(getAccountTransactions(accountId));
         List<Transaction> transactions = accountService.getTransactionDetails(accountId);
@@ -106,4 +102,5 @@ public class AccountServiceTest {
         Assertions.assertEquals(transactions.get(0).getAccountNumber(), "781066619");
         Assertions.assertEquals(transactions.get(0).getTransactionId(), "12347");
     }
+
 }

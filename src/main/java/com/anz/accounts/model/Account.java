@@ -4,10 +4,14 @@ import com.anz.accounts.enums.AccountType;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
-@Getter
-@Setter
+import java.io.Serializable;
+
+@Data
+@RequiredArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class Account extends User {
+public class Account implements Serializable {
+
+    private static final long serialVersionUID = 6373611532663483048L;
 
     private String accountNumber;
 
@@ -22,8 +26,7 @@ public class Account extends User {
     private String balanceAmount;
 
     @Builder
-    public Account(String userId, String accountNumber, String accountName, AccountType accountType, String balanceDate, String currency, String balanceAmount) {
-        super(userId);
+    public Account (String accountNumber, String accountName, AccountType accountType, String balanceDate, String currency, String balanceAmount) {
         this.accountNumber = accountNumber;
         this.accountName = accountName;
         this.accountType = accountType;

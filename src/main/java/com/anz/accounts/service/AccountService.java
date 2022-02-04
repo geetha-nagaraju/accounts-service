@@ -5,14 +5,19 @@ import com.anz.accounts.model.Account;
 import com.anz.accounts.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class AccountService {
 
+    private final AccountDao accountDao;;
+
     @Autowired
-    AccountDao accountDao;
+    public AccountService(AccountDao accountDao) {
+        this.accountDao = accountDao;
+    }
 
     /**
      * get List of account Details
@@ -37,7 +42,7 @@ public class AccountService {
     /**
      * Get Single Account Information
      * @param accountNumber
-     * @return
+     * @return Account
      */
     public Account getAccountDetails(String accountNumber) {
         Account account = accountDao.getAccount(accountNumber);

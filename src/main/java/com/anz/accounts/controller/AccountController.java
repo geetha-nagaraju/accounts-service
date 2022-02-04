@@ -1,4 +1,4 @@
-package com.anz.accounts.resource;
+package com.anz.accounts.controller;
 
 import com.anz.accounts.exception.ServiceException;
 import com.anz.accounts.model.Account;
@@ -13,25 +13,23 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/accounts")
-public class AccountResource {
+public class AccountController {
 
     @Autowired
-    AccountService accountService;
+    private AccountService accountService;
 
     @GetMapping()
     public ResponseEntity<List<Account>> getAllAccounts() {                    //@RequestParam String userId
         return new ResponseEntity<>( accountService.getAllAccountDetails(), HttpStatus.OK );
-
     }
 
     @GetMapping("{id}")
     public ResponseEntity<Account> getAccount(@PathVariable(value = "id") String accountId) {
         return new ResponseEntity<>( accountService.getAccountDetails(accountId), HttpStatus.OK );
-
     }
 
     @GetMapping("{id}/transactions")
-    public ResponseEntity<List<Transaction>> getAccountTransactionsById(@PathVariable(value = "id") String accountId)
+    public ResponseEntity<List<Transaction>> getAccountTransactionsById( @PathVariable(value = "id") String accountId)
             throws ServiceException {
         return new ResponseEntity<>( accountService.getTransactionDetails(accountId), HttpStatus.OK );
     }

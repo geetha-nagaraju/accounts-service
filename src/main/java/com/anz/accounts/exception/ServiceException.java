@@ -1,16 +1,14 @@
 package com.anz.accounts.exception;
 
-public class ServiceException extends Exception {
+public class ServiceException extends RuntimeException {
 
-    public ServiceException(String message)
-    {
+    public ServiceException (String message) {
         // Call constructor of parent Exception
-        super(message);
+        super (message);
     }
 
-    public ServiceException(String message, Throwable throwable)
-    {
-        super(message, throwable);
+    public ServiceException (String message, Throwable throwable) {
+        super (message, throwable);
     }
 
 }
