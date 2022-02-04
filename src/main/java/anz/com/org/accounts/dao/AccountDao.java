@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Component
@@ -36,6 +37,7 @@ public class AccountDao {
 
         accounts.add(account1);
         accounts.add(account2);
+        accounts.add(account3);
 
         return accounts;
     }
@@ -71,5 +73,26 @@ public class AccountDao {
         return acctTransactionMap.get(accountId);
 
        //return transactions;
+    }
+
+    /**
+     * Get single Account information
+     * @param accountNumber
+     * @return account
+     */
+    public Account getAccount(String accountNumber) {
+
+        List<Account> accounts = getAccountList();
+        Account account = null;
+
+        Optional<Account> acc = accounts.stream()
+                .filter(acct-> acct.getAccountNumber().equals(accountNumber))
+                .findAny();
+
+        if (acc.isPresent()) {
+            account = acc.get();
+        }
+
+        return account;
     }
 }

@@ -33,4 +33,14 @@ public class AccountService {
         List<Transaction> accountTransactions = accountDao.getAccountTransactionDetails(accountId);
         return  accountTransactions;
     }
+
+    /**
+     * Get Single Account Information
+     * @param accountNumber
+     * @return
+     */
+    public Account getAccountDetails(String accountNumber) {
+        Account account = accountDao.getAccount(accountNumber);
+        return account;
+    }
 }

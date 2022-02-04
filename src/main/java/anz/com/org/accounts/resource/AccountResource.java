@@ -24,6 +24,12 @@ public class AccountResource {
 
     }
 
+    @GetMapping("{id}")
+    public ResponseEntity<Account> getAccount(@PathVariable(value = "id") String accountId) {
+        return new ResponseEntity<>( accountService.getAccountDetails(accountId), HttpStatus.OK );
+
+    }
+
     @GetMapping("{id}/transactions")
     public ResponseEntity<List<Transaction>> getAccountTransactionsById(@PathVariable(value = "id") String accountId)
             throws ServiceException {
