@@ -1,12 +1,13 @@
 package anz.com.org.accounts.model;
 
 import anz.com.org.accounts.enums.AccountType;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 @Getter
 @Setter
-@Builder
-public class Account {
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class Account extends User {
 
     private String accountNumber;
 
@@ -20,4 +21,14 @@ public class Account {
 
     private String balanceAmount;
 
+    @Builder
+    public Account(String userId, String accountNumber, String accountName, AccountType accountType, String balanceDate, String currency, String balanceAmount) {
+        super(userId);
+        this.accountNumber = accountNumber;
+        this.accountName = accountName;
+        this.accountType = accountType;
+        this.balanceDate = balanceDate;
+        this.currency = currency;
+        this.balanceAmount = balanceAmount;
+    }
 }

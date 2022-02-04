@@ -14,16 +14,23 @@ public class AccountService {
     @Autowired
     AccountDao accountDao;
 
+    /**
+     * get List of account Details
+     * @return account List
+     */
     public List<Account> getAllAccountDetails() {
-
         List<Account> accounts = accountDao.getAccountList();
         return accounts;
     }
 
+    /**
+     * Get Transactions for given Account
+     * @param accountId
+     * @return transactions List
+     */
     public List<Transaction> getTransactionDetails(String accountId) {
 
-        List<Transaction> accountTransactions = accountDao.getAccountTransactionDetails();
+        List<Transaction> accountTransactions = accountDao.getAccountTransactionDetails(accountId);
         return  accountTransactions;
-
     }
 }
