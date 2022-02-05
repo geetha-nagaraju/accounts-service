@@ -19,12 +19,12 @@ public class AccountController {
     private AccountService accountService;
 
     @GetMapping()
-    public ResponseEntity<List<Account>> getAllAccounts() {                    //@RequestParam String userId
+    public ResponseEntity<List<Account>> getAllAccounts() throws ServiceException {
         return new ResponseEntity<>( accountService.getAllAccountDetails(), HttpStatus.OK );
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Account> getAccount(@PathVariable(value = "id") String accountId) {
+    public ResponseEntity<Account> getAccount(@PathVariable(value = "id") String accountId) throws ServiceException {
         return new ResponseEntity<>( accountService.getAccountDetails(accountId), HttpStatus.OK );
     }
 

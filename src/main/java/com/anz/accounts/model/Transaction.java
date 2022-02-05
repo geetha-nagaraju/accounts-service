@@ -2,18 +2,19 @@ package com.anz.accounts.model;
 
 import com.anz.accounts.enums.DebitCreditEnum;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import java.io.Serializable;
 
 @Data
-@RequiredArgsConstructor
+@Builder
+@AllArgsConstructor
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Transaction implements Serializable {
 
-    private static final long serialVersionUID = 6373611555563483048L;
+    private static final long serialVersionUID = 201L;
 
     private String accountNumber;
 
@@ -33,16 +34,4 @@ public class Transaction implements Serializable {
 
     private String comments;
 
-    @Builder
-    public Transaction (String accountNumber, String accountName, String transactionId, String valueDate, String currency, String debitAmount, String creditAmount, DebitCreditEnum debitCreditIndicator, String comments) {
-        this.accountNumber = accountNumber;
-        this.accountName = accountName;
-        this.transactionId = transactionId;
-        this.valueDate = valueDate;
-        this.currency = currency;
-        this.debitAmount = debitAmount;
-        this.creditAmount = creditAmount;
-        this.debitCreditIndicator = debitCreditIndicator;
-        this.comments = comments;
-    }
 }
