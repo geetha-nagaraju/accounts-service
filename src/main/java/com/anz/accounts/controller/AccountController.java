@@ -24,12 +24,12 @@ public class AccountController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<Account> getAccount(@PathVariable(value = "id") String accountId) throws ServiceException {
+    public ResponseEntity<Account> getAccount(@PathVariable(value = "id") final String accountId) throws ServiceException {
         return new ResponseEntity<>( accountService.getAccountDetails(accountId), HttpStatus.OK );
     }
 
     @GetMapping("{id}/transactions")
-    public ResponseEntity<List<Transaction>> getAccountTransactionsById( @PathVariable(value = "id") String accountId)
+    public ResponseEntity<List<Transaction>> getAccountTransactionsById( @PathVariable(value = "id") final String accountId)
             throws ServiceException {
         return new ResponseEntity<>( accountService.getTransactionDetails(accountId), HttpStatus.OK );
     }
